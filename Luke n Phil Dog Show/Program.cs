@@ -1,7 +1,20 @@
+using Luke_n_Phil_Dog_Show.Data;
+using Luke_n_Phil_Dog_Show.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
+// configure sql server to ApplicationDbContext
+builder.Services.AddDbContext<ApplicationDbContext>(e =>
+e.UseSqlServer(builder.Configuration.GetConnectionString("Default Connection")));
+// configure identity framework to use AppUser for the user system
+builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+// additional services
 builder.Services.AddControllersWithViews();
+
+
 
 var app = builder.Build();
 
