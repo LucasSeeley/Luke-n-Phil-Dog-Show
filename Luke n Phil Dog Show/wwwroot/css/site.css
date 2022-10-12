@@ -1,11 +1,29 @@
 html {
   font-size: 14px;
 }
-
+/*desktop*/
+@media (min-width: 1080px) {
+    html {
+        font-size: 16px;
+    }
+}
+/*laptop*/
 @media (min-width: 768px) {
   html {
     font-size: 16px;
   }
+}
+/* smart phone*/
+@media (min-width: 640) {
+    html {
+        font-size: 16px;
+    }
+}
+/*tablet*/
+@media (min-width: 800px) {
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
@@ -18,7 +36,15 @@ body {
 }
 
 .site-primary-color{
-    background: skyblue;
-    margin-left: 19em;
-    margin-right: 19em;
+    background-color: orangered;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    background-color: darkblue;
 }
