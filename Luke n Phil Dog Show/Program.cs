@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // configure sql server to ApplicationDbContext
 builder.Services.AddDbContext<ApplicationDbContext>(e =>
-e.UseSqlServer(builder.Configuration.GetConnectionString("Default Connection")));
+e.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 // configure identity framework to use AppUser for the user system
 builder.Services.AddIdentity<AppUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 // additional services
