@@ -25,7 +25,7 @@ namespace Luke_n_Phil_Dog_Show.Controllers
         [HttpGet]
         public async Task<IActionResult> Register(string? returnUrl = null)
         {
-            if (!await _roleManager.RoleExistsAsync("Admin"))
+            if (!await _roleManager.RoleExistsAsync("Trainer"))
             {
                 await _roleManager.CreateAsync(new IdentityRole("Admin"));
                 await _roleManager.CreateAsync(new IdentityRole("Trainer"));
@@ -50,6 +50,7 @@ namespace Luke_n_Phil_Dog_Show.Controllers
             });
 
             RegisterViewModel registerViewModel = new RegisterViewModel();
+            registerViewModel.RoleList = listItems;
             registerViewModel.ReturnUrl = returnUrl;
             return View(registerViewModel);
         }
