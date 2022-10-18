@@ -55,7 +55,7 @@ body {
     margin-right: auto;
     width: 80%;
 }
-h1
+h1,h2,h3,h4
 {
     text-align:center;
 }
@@ -67,4 +67,7 @@ img{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+p {
+    text-align: center;
 }
