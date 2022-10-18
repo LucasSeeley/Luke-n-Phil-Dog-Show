@@ -29,6 +29,7 @@ namespace Luke_n_Phil_Dog_Show.Controllers
             {
                 await _roleManager.CreateAsync(new IdentityRole("Admin"));
                 await _roleManager.CreateAsync(new IdentityRole("Trainer"));
+                await _roleManager.CreateAsync(new IdentityRole("Visitor"));
             }
 
             List<SelectListItem> listItems = new List<SelectListItem>();
