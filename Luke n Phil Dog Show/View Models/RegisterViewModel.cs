@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
 
 namespace Luke_n_Phil_Dog_Show.View_Models
@@ -26,5 +27,9 @@ namespace Luke_n_Phil_Dog_Show.View_Models
         public string ConfirmPassword { get; set; }
 
         public string? ReturnUrl { get; set; }
+
+        public IEnumerable<SelectListItem>? RoleList { get; set; }
+
+        public string? RoleSelected { get; set; }
     }
 }
