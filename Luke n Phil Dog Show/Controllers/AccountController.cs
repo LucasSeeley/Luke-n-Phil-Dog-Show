@@ -25,10 +25,9 @@ namespace Luke_n_Phil_Dog_Show.Controllers
         [HttpGet]
         public async Task<IActionResult> Register(string? returnUrl = null)
         {
-            if (!await _roleManager.RoleExistsAsync("Trainer"))
+            if (!await _roleManager.RoleExistsAsync("Admin"))
             {
                 await _roleManager.CreateAsync(new IdentityRole("Admin"));
-                await _roleManager.CreateAsync(new IdentityRole("Trainer"));
                 await _roleManager.CreateAsync(new IdentityRole("Visitor"));
             }
 
@@ -37,11 +36,6 @@ namespace Luke_n_Phil_Dog_Show.Controllers
             {
                 Value = "Admin",
                 Text = "Admin"
-            });
-            listItems.Add(new SelectListItem()
-            {
-                Value = "Trainer",
-                Text = "Trainer"
             });
             listItems.Add(new SelectListItem()
             {
@@ -66,11 +60,7 @@ namespace Luke_n_Phil_Dog_Show.Controllers
                 var result = await _userManager.CreateAsync(user, registerViewModel.Password);
                 if (result.Succeeded)
                 {
-                    if (registerViewModel.RoleSelected != null && registerViewModel.RoleSelected.Length > 0 && registerViewModel.RoleSelected == "Trainer")
-                    {
-                        await _userManager.AddToRoleAsync(user, "Trainer");
-                    }
-                    else if (registerViewModel.RoleSelected != null && registerViewModel.RoleSelected.Length > 0 && registerViewModel.RoleSelected == "Admin")
+                    if (registerViewModel.RoleSelected != null && registerViewModel.RoleSelected.Length > 0 && registerViewModel.RoleSelected == "Admin")
                     {
                         await _userManager.AddToRoleAsync(user, "Admin");
                     }
