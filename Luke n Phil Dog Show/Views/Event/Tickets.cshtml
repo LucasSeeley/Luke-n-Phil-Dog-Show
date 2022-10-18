@@ -1,0 +1,97 @@
+﻿@using Luke_n_Phil_Dog_Show.View_Models
+@model TicketViewModel
+
+<h1 class="text-info">Purchase Tickets</h1>
+<form asp-controller="Event" asp-action="Tickets" method="post" role="form">
+    <hr />
+    <div class="form-group">
+        <label asp-for="EventSelected" class="col-md-2"></label>
+        <div class="col-md-10">
+            <select asp-for="EventSelected" asp-items="@Model.EventList" class="form-control">
+                <option disabled selected>--Select Event--</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstName" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="FirstName" class="form-control" />
+            <span asp-validation-for="FirstName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="StreetAddress" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="StreetAddress" class="form-control" />
+            <span asp-validation-for="StreetAddress" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="City" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="City" class="form-control" />
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="State" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="State" class="form-control" />
+            <span asp-validation-for="State" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="PostalCode" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="PostalCode" class="form-control" />
+            <span asp-validation-for="PostalCode" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="CreditCardNumber" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="CreditCardNumber" class="form-control" />
+            <span asp-validation-for="CreditCardNumber" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="CVV" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="CVV" class="form-control" />
+            <span asp-validation-for="CVV" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="ExpirationMonth" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="ExpirationMonth" class="form-control" />
+            <span asp-validation-for="ExpirationMonth" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="ExpirationYear" class="col-md-2"></label>
+        <div class="col-md-10">
+            <input asp-for="ExpirationYear" class="form-control" />
+            <span asp-validation-for="ExpirationYear" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="offset-md-2 col-md-10">
+            <button type="submit" class="btn btn-success">Register</button>
+        </div>
+    </div>
+</form>

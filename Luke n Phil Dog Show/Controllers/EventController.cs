@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Luke_n_Phil_Dog_Show.View_Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Luke_n_Phil_Dog_Show.Controllers
 {
@@ -9,9 +11,24 @@ namespace Luke_n_Phil_Dog_Show.Controllers
             return View();
         }
 
-        public IActionResult Tickets()
+        public IActionResult Tickets(string? returnUrl = null)
         {
-            return View();
+            List<SelectListItem> listItems = new List<SelectListItem>();
+            listItems.Add(new SelectListItem()
+            {
+                Value = "Event1",
+                Text = "Event1"
+            });
+            listItems.Add(new SelectListItem()
+            {
+                Value = "Event2",
+                Text = "Event2"
+            });
+
+            TicketViewModel ticketViewModel = new TicketViewModel();
+            ticketViewModel.EventList = listItems;
+            ticketViewModel.ReturnUrl = returnUrl;
+            return View(ticketViewModel);
         }
     }
 }
