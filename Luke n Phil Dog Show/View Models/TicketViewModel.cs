@@ -46,17 +46,17 @@ namespace Luke_n_Phil_Dog_Show.View_Models
 
         [Required]
         [StringLength(3, MinimumLength =3)]
-        public int CVV { get; set; }
+        public string CVV { get; set; }
 
         [Required]
-        [Range(1, 12)]
+        [StringLength(2, MinimumLength = 2)]
         [DisplayName("Expiration Month (MM)")]
-        public int ExpirationMonth { get; set; }
+        public string ExpirationMonth { get; set; }
 
         [Required]
-        [Range(2022, 2027)]
-        [DisplayName("Expiration Year (YYYY)")]
-        public int ExpirationYear { get; set; }
+        [StringLength(2,MinimumLength = 2)]
+        [DisplayName("Expiration Year (YY)")]
+        public string ExpirationYear { get; set; }
 
         public string? ReturnUrl { get; set; }
     }
