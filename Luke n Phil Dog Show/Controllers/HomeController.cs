@@ -22,10 +22,6 @@ namespace Luke_n_Phil_Dog_Show.Controllers
         {
             return View();
         }
-        public IActionResult Events()
-        {
-            return View();
-        }
 
         public IActionResult DogTrainerBios()
         {
