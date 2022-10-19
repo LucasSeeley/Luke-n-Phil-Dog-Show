@@ -31,6 +31,7 @@ namespace Luke_n_Phil_Dog_Show.View_Models
 
         [Required]
         [StringLength (5, MinimumLength =5)]
+        [DisplayName("Postal Code")]
         public string PostalCode { get; set; }
 
 
