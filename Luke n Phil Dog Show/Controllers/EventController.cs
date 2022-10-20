@@ -40,13 +40,13 @@ namespace Luke_n_Phil_Dog_Show.Controllers
             });
             listItems.Add(new SelectListItem()
             {
-                Value = "2023 Big Dog Agility Competition",
-                Text = "2023 Big Dog Agility Competition"
+                Value = "2023 Masters of Big Dog Agility Competition",
+                Text = "2023 Masters of Big Dog Agility Competition"
             });
             listItems.Add(new SelectListItem()
             {
-                Value = "2023 Conformation and Junior Showmanship Exhibitor Qualifying Information",
-                Text = "2023 Conformation and Junior Showmanship Exhibitor Qualifying Information"
+                Value = "2023 Dog Dock Distance Jump Championship",
+                Text = "2023 Dog Dock Distance Jump Championship"
             });
 
             TicketViewModel ticketViewModel = new TicketViewModel();
